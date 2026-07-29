@@ -1,0 +1,4 @@
+= 2026-07-29 – initial
+
+* Packaged the official Antora extension-use-case snippet as `@antora-supplemental/alias-component-to-latest`.
+* Intended as a stopgap until Antora core gains an opt-in playbook key (proposal on antora/antora#291).

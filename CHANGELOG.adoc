@@ -1,0 +1,6 @@
+= Changelog
+
+== 2026-07-29
+
+* Initial release: alias versioned component root to latest start page (Antora docs use-case).
+* See link:changelog-details/2026-07-29 - initial.adoc[Detailed notes].

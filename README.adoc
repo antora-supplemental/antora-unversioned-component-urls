@@ -1,0 +1,38 @@
+= alias-component-to-latest
+:toc:
+
+Antora extension that aliases a **versioned** component root URL (`/component-name/`) to the start page of that component’s **latest** version.
+
+This is the documented Antora extension use case, packaged so sites do not copy-paste it forever:
+
+https://docs.antora.org/antora/latest/extend/extension-use-cases/#redirect-from-component-to-latest-version
+
+Upstream proposal (opt-in core):: see the Antora issue discussion linked from the changelog / DevCentr Essential Extensions page.
+
+== Install
+
+[source,shell]
+----
+pnpm add -D github:antora-supplemental/antora-alias-component-to-latest
+----
+
+== Playbook
+
+[source,yaml]
+----
+antora:
+  extensions:
+    - require: '@antora-supplemental/alias-component-to-latest'
+----
+
+Components that already use `version: ~` (versionless) are skipped.
+
+Redirect output follows your playbook `urls.redirect_facility` (default `static` works on GitHub Pages).
+
+== Why this exists
+
+With only numbered versions, Antora does not publish `/component/`. Shared links and naive nav to the component name 404 unless you add this alias (or stay versionless). That should be an opt-in core playbook key, not a tribal ritual.
+
+== License
+
+MIT

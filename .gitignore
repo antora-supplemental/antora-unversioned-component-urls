@@ -1,0 +1,10 @@
+*
+!.gitignore
+!LICENSE
+!README.adoc
+!CHANGELOG.adoc
+!package.json
+!lib/
+!lib/**
+!changelog-details/
+!changelog-details/**

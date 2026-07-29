@@ -1,0 +1,37 @@
+{
+  "name": "@antora-supplemental/alias-component-to-latest",
+  "version": "1.0.0",
+  "description": "Antora extension: alias versioned component root URL to the latest version start page. Candidate for core (opt-in playbook key).",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js"
+  },
+  "files": [
+    "lib/**/*",
+    "README.adoc",
+    "CHANGELOG.adoc",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "antora",
+    "antora-extension",
+    "redirect",
+    "alias",
+    "latest"
+  ],
+  "homepage": "https://github.com/antora-supplemental/antora-alias-component-to-latest",
+  "bugs": {
+    "url": "https://github.com/antora-supplemental/antora-alias-component-to-latest/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antora-supplemental/antora-alias-component-to-latest.git"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "peerDependencies": {
+    "@antora/site-generator": ">=3.1.0"
+  }
+}
