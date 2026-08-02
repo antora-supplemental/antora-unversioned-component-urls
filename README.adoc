@@ -1,10 +1,11 @@
-= alias-component-to-latest
+= unversioned-component-urls
 :toc:
 :toclevels: 2
 
-Antora extension that gives **versioned** components a useful bare URL (`/component-name/`).
+Antora extension that gives **versioned** components a useful bare URL (`/component-name/`), with an explicit choice of policy:
 
-By default (2.x) that URL is a **version selector** page — an explicit chooser instead of a silent redirect to latest. You can still opt into the classic alias-to-latest behavior from the Antora docs use case.
+* `selector` (default) — version chooser page
+* `alias` / `alias_to_latest` — redirect to the latest version’s start page
 
 Upstream discussion:: https://gitlab.com/antora/antora/-/issues/291
 
@@ -18,29 +19,31 @@ Pin a release tag when you can:
 
 [source,shell]
 ----
-pnpm add -D github:antora-supplemental/antora-alias-component-to-latest#v2.0.0
+pnpm add -D github:antora-supplemental/antora-unversioned-component-urls#v2.1.0
 # npm
-npm install -D github:antora-supplemental/antora-alias-component-to-latest#v2.0.0
+npm install -D github:antora-supplemental/antora-unversioned-component-urls#v2.1.0
 # yarn
-yarn add -D github:antora-supplemental/antora-alias-component-to-latest#v2.0.0
+yarn add -D github:antora-supplemental/antora-unversioned-component-urls#v2.1.0
 ----
 
 Floating `main` (gets fixes without a bump — less reproducible):
 
 [source,shell]
 ----
-pnpm add -D github:antora-supplemental/antora-alias-component-to-latest
+pnpm add -D github:antora-supplemental/antora-unversioned-component-urls
 ----
 
 === Sibling checkout (local hack)
 
 [source,shell]
 ----
-pnpm add -D file:../antora-alias-component-to-latest
+pnpm add -D file:../antora-unversioned-component-urls
 ----
 
-Package name on disk:: `@antora-supplemental/alias-component-to-latest`  
-Repo name:: `antora-alias-component-to-latest`
+Package name:: `@antora-supplemental/unversioned-component-urls`  
+Repo name:: `antora-unversioned-component-urls`
+
+Former names (GitHub redirects the old repo URL):: `antora-alias-component-to-latest` / `@antora-supplemental/alias-component-to-latest` — update `require` / dependency keys to the new package name.
 
 npm publish is optional later; GitHub install is enough for public use.
 
@@ -53,7 +56,7 @@ Register under `antora.extensions` (order relative to Lunr does not matter for t
 antora:
   extensions:
     - require: '@antora/lunr-extension'   # recommended on every site
-    - require: '@antora-supplemental/alias-component-to-latest'
+    - require: '@antora-supplemental/unversioned-component-urls'
 ----
 
 With only the package name (Node resolves `main` / `exports`):
@@ -62,7 +65,7 @@ With only the package name (Node resolves `main` / `exports`):
 ----
 antora:
   extensions:
-    - '@antora-supplemental/alias-component-to-latest'
+    - '@antora-supplemental/unversioned-component-urls'
 ----
 
 === Modes
@@ -71,8 +74,8 @@ antora:
 ----
 antora:
   extensions:
-    - require: '@antora-supplemental/alias-component-to-latest'
-      mode: selector              # default in 2.x — version chooser page
+    - require: '@antora-supplemental/unversioned-component-urls'
+      mode: selector              # default — version chooser page
       # mode: alias               # redirect /component/ -> latest start page
       # mode: alias_to_latest     # same as alias
       short_circuit_single: true  # default; one-version components alias through
@@ -81,7 +84,7 @@ antora:
 | Mode | `/component-name/` becomes |
 |====
 | `selector` (default) | A page listing each numbered version (and marking latest), with xrefs into that version’s start page |
-| `alias` / `alias_to_latest` | A redirect to the latest version’s start page (1.x behavior / Antora docs snippet) |
+| `alias` / `alias_to_latest` | A redirect to the latest version’s start page (Antora docs snippet behavior) |
 |====
 
 Components that already have an empty / `version: ~` version are skipped in every mode.

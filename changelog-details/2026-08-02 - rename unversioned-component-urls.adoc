@@ -1,0 +1,6 @@
+= 2026-08-02 — Rename to unversioned-component-urls
+
+* Repo:: `antora-alias-component-to-latest` → `antora-unversioned-component-urls`
+* Package:: `@antora-supplemental/alias-component-to-latest` → `@antora-supplemental/unversioned-component-urls`
+* Default mode remains `selector`; `alias` / `alias_to_latest` still available.
+* Update playbook `require` and dependency keys to the new package name (GitHub redirects the old repo URL, but Node resolves by package name).

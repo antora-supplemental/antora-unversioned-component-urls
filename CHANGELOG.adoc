@@ -2,6 +2,9 @@
 
 == 2026-08-02
 
+* **2.1.0:** Rename package/repo to `unversioned-component-urls` (modes unchanged; `selector` remains default).
+* See link:changelog-details/2026-08-02 - rename unversioned-component-urls.adoc[Detailed notes].
+
 * **2.0.0:** Default mode is now `selector` (version chooser at `/component/`) instead of silent alias-to-latest.
 * Keep classic redirect via `mode: alias` / `mode: alias_to_latest`.
 * Add `short_circuit_single` (default true) so one-version components still alias through.
