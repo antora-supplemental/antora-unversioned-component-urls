@@ -1,7 +1,7 @@
 {
   "name": "@antora-supplemental/alias-component-to-latest",
-  "version": "1.0.0",
-  "description": "Antora extension: alias versioned component root URL to the latest version start page. Candidate for core (opt-in playbook key).",
+  "version": "2.0.0",
+  "description": "Antora extension: unversioned /component/ URL as a version selector (default) or alias to latest. Candidate for core (opt-in playbook key).",
   "main": "lib/index.js",
   "exports": {
     ".": "./lib/index.js"
@@ -12,13 +12,18 @@
     "CHANGELOG.adoc",
     "LICENSE"
   ],
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
   "license": "MIT",
   "keywords": [
     "antora",
     "antora-extension",
     "redirect",
     "alias",
-    "latest"
+    "latest",
+    "version-selector",
+    "unversioned"
   ],
   "homepage": "https://github.com/antora-supplemental/antora-alias-component-to-latest",
   "bugs": {

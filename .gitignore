@@ -3,8 +3,11 @@
 !LICENSE
 !README.adoc
 !CHANGELOG.adoc
+!antora-registry.md
 !package.json
 !lib/
 !lib/**
+!test/
+!test/**
 !changelog-details/
 !changelog-details/**

@@ -1,5 +1,12 @@
 = Changelog
 
+== 2026-08-02
+
+* **2.0.0:** Default mode is now `selector` (version chooser at `/component/`) instead of silent alias-to-latest.
+* Keep classic redirect via `mode: alias` / `mode: alias_to_latest`.
+* Add `short_circuit_single` (default true) so one-version components still alias through.
+* See link:changelog-details/2026-08-02 - version selector default.adoc[Detailed notes].
+
 == 2026-07-29
 
 * Initial release: alias versioned component root to latest start page (Antora docs use-case).

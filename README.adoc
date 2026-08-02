@@ -1,37 +1,106 @@
 = alias-component-to-latest
 :toc:
+:toclevels: 2
 
-Antora extension that aliases a **versioned** component root URL (`/component-name/`) to the start page of that component’s **latest** version.
+Antora extension that gives **versioned** components a useful bare URL (`/component-name/`).
 
-This is the documented Antora extension use case, packaged so sites do not copy-paste it forever:
+By default (2.x) that URL is a **version selector** page — an explicit chooser instead of a silent redirect to latest. You can still opt into the classic alias-to-latest behavior from the Antora docs use case.
 
-https://docs.antora.org/antora/latest/extend/extension-use-cases/#redirect-from-component-to-latest-version
+Upstream discussion:: https://gitlab.com/antora/antora/-/issues/291
 
-Upstream proposal (opt-in core):: see the Antora issue discussion linked from the changelog / DevCentr Essential Extensions page.
+Related Antora use case (alias mode):: https://docs.antora.org/antora/latest/extend/extension-use-cases/#redirect-from-component-to-latest-version
 
 == Install
+
+=== From GitHub (current)
+
+Pin a release tag when you can:
+
+[source,shell]
+----
+pnpm add -D github:antora-supplemental/antora-alias-component-to-latest#v2.0.0
+# npm
+npm install -D github:antora-supplemental/antora-alias-component-to-latest#v2.0.0
+# yarn
+yarn add -D github:antora-supplemental/antora-alias-component-to-latest#v2.0.0
+----
+
+Floating `main` (gets fixes without a bump — less reproducible):
 
 [source,shell]
 ----
 pnpm add -D github:antora-supplemental/antora-alias-component-to-latest
 ----
 
+=== Sibling checkout (local hack)
+
+[source,shell]
+----
+pnpm add -D file:../antora-alias-component-to-latest
+----
+
+Package name on disk:: `@antora-supplemental/alias-component-to-latest`  
+Repo name:: `antora-alias-component-to-latest`
+
+npm publish is optional later; GitHub install is enough for public use.
+
 == Playbook
+
+Register under `antora.extensions` (order relative to Lunr does not matter for this extension):
+
+[source,yaml]
+----
+antora:
+  extensions:
+    - require: '@antora/lunr-extension'   # recommended on every site
+    - require: '@antora-supplemental/alias-component-to-latest'
+----
+
+With only the package name (Node resolves `main` / `exports`):
+
+[source,yaml]
+----
+antora:
+  extensions:
+    - '@antora-supplemental/alias-component-to-latest'
+----
+
+=== Modes
 
 [source,yaml]
 ----
 antora:
   extensions:
     - require: '@antora-supplemental/alias-component-to-latest'
+      mode: selector              # default in 2.x — version chooser page
+      # mode: alias               # redirect /component/ -> latest start page
+      # mode: alias_to_latest     # same as alias
+      short_circuit_single: true  # default; one-version components alias through
 ----
 
-Components that already use `version: ~` (versionless) are skipped.
+| Mode | `/component-name/` becomes |
+|====
+| `selector` (default) | A page listing each numbered version (and marking latest), with xrefs into that version’s start page |
+| `alias` / `alias_to_latest` | A redirect to the latest version’s start page (1.x behavior / Antora docs snippet) |
+|====
 
-Redirect output follows your playbook `urls.redirect_facility` (default `static` works on GitHub Pages).
+Components that already have an empty / `version: ~` version are skipped in every mode.
 
-== Why this exists
+== Behavior
 
-With only numbered versions, Antora does not publish `/component/`. Shared links and naive nav to the component name 404 unless you add this alias (or stay versionless). That should be an opt-in core playbook key, not a tribal ritual.
+* Versioned URLs such as `/component-name/0.2.0/` keep working.
+* Selector pages are real versionless ROOT `index.adoc` pages (not redirects), so relative links and UI chrome behave normally.
+* With `short_circuit_single: true` (default), a component that has exactly one numbered version uses an alias instead of a one-item chooser.
+* Page-level unversioned URLs (e.g. `/component-name/attributes.html` as a per-page chooser) are not implemented yet — component root only for now.
+
+== Requirements
+
+* Antora 3.1+ (`@antora/site-generator` peer)
+* Node 18+
+
+== Discovery
+
+GitHub topic:: `antora-extension` (for https://antora-extensions.org[antora-extensions.org] topic discovery)
 
 == License
 

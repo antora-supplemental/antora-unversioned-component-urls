@@ -1,0 +1,7 @@
+= 2026-08-02 — Version selector default
+
+* Breaking default: `/component/` is a **version selector page** unless `mode: alias` (or `alias_to_latest`) is set.
+* Motivation: stronger compromise on https://gitlab.com/antora/antora/-/issues/291 — bare component URLs stay shareable without silently inventing “current” content.
+* `short_circuit_single: true` (default) aliases when a component has only one numbered version.
+* Page-level unversioned choosers remain future work; this release covers component roots only.
+* Upstream note: https://gitlab.com/antora/antora/-/issues/291#note_3633208092
