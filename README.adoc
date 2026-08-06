@@ -1,17 +1,44 @@
-= unversioned-component-urls
-:toc:
+ifndef::env-github[:icons: font]
+:toc: preamble
 :toclevels: 2
+:sectanchors:
+endif::[]
+
+ifndef::env-github[]
+image:https://img.shields.io/github/contributors/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge[Contributors,link=https://github.com/antora-supplemental/antora-unversioned-component-urls/graphs/contributors]
+image:https://img.shields.io/github/forks/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge[Forks,link=https://github.com/antora-supplemental/antora-unversioned-component-urls/network/members]
+image:https://img.shields.io/github/stars/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge[Stars,link=https://github.com/antora-supplemental/antora-unversioned-component-urls/stargazers]
+image:https://img.shields.io/github/issues/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge[Issues,link=https://github.com/antora-supplemental/antora-unversioned-component-urls/issues]
+image:https://img.shields.io/github/license/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge[License,link=https://github.com/antora-supplemental/antora-unversioned-component-urls/blob/main/LICENSE]
+endif::[]
+
+ifdef::env-github[]
+image:https://img.shields.io/github/contributors/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge[Contributors]
+image:https://img.shields.io/github/forks/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge[Forks]
+image:https://img.shields.io/github/stars/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge[Stars]
+image:https://img.shields.io/github/issues/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge[Issues]
+image:https://img.shields.io/github/license/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge[License]
+endif::[]
+
+= unversioned-component-urls
+
+Antora extension: bare `/component/` URL as version selector (default) or alias to latest.
+
+link:https://github.com/antora-supplemental/antora-unversioned-component-urls/issues[Report Bug] ·
+link:https://github.com/antora-supplemental/antora-unversioned-component-urls/issues[Request Feature]
+
+== About The Project
 
 Antora extension that gives **versioned** components a useful bare URL (`/component-name/`), with an explicit choice of policy:
 
 * `selector` (default) — version chooser page
-* `alias` / `alias_to_latest` — redirect to the latest version’s start page
+* `alias` / `alias_to_latest` — redirect to the latest version's start page
 
 Upstream discussion:: https://gitlab.com/antora/antora/-/issues/291
 
 Related Antora use case (alias mode):: https://docs.antora.org/antora/latest/extend/extension-use-cases/#redirect-from-component-to-latest-version
 
-== Install
+== Installation
 
 === From GitHub (current)
 
@@ -47,7 +74,9 @@ Former names (GitHub redirects the old repo URL):: `antora-alias-component-to-la
 
 npm publish is optional later; GitHub install is enough for public use.
 
-== Playbook
+== Usage
+
+=== Playbook
 
 Register under `antora.extensions` (order relative to Lunr does not matter for this extension):
 
@@ -68,7 +97,7 @@ antora:
     - '@antora-supplemental/unversioned-component-urls'
 ----
 
-=== Modes
+==== Modes
 
 [source,yaml]
 ----
@@ -83,28 +112,35 @@ antora:
 
 | Mode | `/component-name/` becomes |
 |====
-| `selector` (default) | A page listing each numbered version (and marking latest), with xrefs into that version’s start page |
-| `alias` / `alias_to_latest` | A redirect to the latest version’s start page (Antora docs snippet behavior) |
+| `selector` (default) | A page listing each numbered version (and marking latest), with xrefs into that version's start page |
+| `alias` / `alias_to_latest` | A redirect to the latest version's start page (Antora docs snippet behavior) |
 |====
 
 Components that already have an empty / `version: ~` version are skipped in every mode.
 
-== Behavior
+=== Behavior
 
 * Versioned URLs such as `/component-name/0.2.0/` keep working.
 * Selector pages are real versionless ROOT `index.adoc` pages (not redirects), so relative links and UI chrome behave normally.
 * With `short_circuit_single: true` (default), a component that has exactly one numbered version uses an alias instead of a one-item chooser.
 * Page-level unversioned URLs (e.g. `/component-name/attributes.html` as a per-page chooser) are not implemented yet — component root only for now.
 
-== Requirements
+=== Requirements
 
 * Antora 3.1+ (`@antora/site-generator` peer)
 * Node 18+
 
-== Discovery
+=== Discovery
 
 GitHub topic:: `antora-extension` (for https://antora-extensions.org[antora-extensions.org] topic discovery)
 
 == License
 
-MIT
+MIT — see link:LICENSE[].
+
+== Contact
+
+Antora Supplemental — support@antora-supplemental.org
+
+* Project: https://github.com/antora-supplemental/antora-unversioned-component-urls
+* Site: https://antora-supplemental.org
