@@ -4,21 +4,12 @@ ifndef::env-github[:icons: font]
 :sectanchors:
 endif::[]
 
-ifndef::env-github[]
+[[readme-top]]
 image:https://img.shields.io/github/contributors/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge[Contributors,link=https://github.com/antora-supplemental/antora-unversioned-component-urls/graphs/contributors]
 image:https://img.shields.io/github/forks/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge[Forks,link=https://github.com/antora-supplemental/antora-unversioned-component-urls/network/members]
 image:https://img.shields.io/github/stars/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge[Stars,link=https://github.com/antora-supplemental/antora-unversioned-component-urls/stargazers]
 image:https://img.shields.io/github/issues/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge[Issues,link=https://github.com/antora-supplemental/antora-unversioned-component-urls/issues]
 image:https://img.shields.io/github/license/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge[License,link=https://github.com/antora-supplemental/antora-unversioned-component-urls/blob/main/LICENSE]
-endif::[]
-
-ifdef::env-github[]
-image:https://img.shields.io/github/contributors/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge[Contributors]
-image:https://img.shields.io/github/forks/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge[Forks]
-image:https://img.shields.io/github/stars/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge[Stars]
-image:https://img.shields.io/github/issues/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge[Issues]
-image:https://img.shields.io/github/license/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge[License]
-endif::[]
 
 = unversioned-component-urls
 
@@ -37,6 +28,8 @@ Antora extension that gives **versioned** components a useful bare URL (`/compon
 Upstream discussion:: https://gitlab.com/antora/antora/-/issues/291
 
 Related Antora use case (alias mode):: https://docs.antora.org/antora/latest/extend/extension-use-cases/#redirect-from-component-to-latest-version
+
+link:#readme-top[back to top]
 
 == Installation
 
@@ -73,6 +66,8 @@ Repo name:: `antora-unversioned-component-urls`
 Former names (GitHub redirects the old repo URL):: `antora-alias-component-to-latest` / `@antora-supplemental/alias-component-to-latest` — update `require` / dependency keys to the new package name.
 
 npm publish is optional later; GitHub install is enough for public use.
+
+link:#readme-top[back to top]
 
 == Usage
 
@@ -134,9 +129,13 @@ Components that already have an empty / `version: ~` version are skipped in ever
 
 GitHub topic:: `antora-extension` (for https://antora-extensions.org[antora-extensions.org] topic discovery)
 
+link:#readme-top[back to top]
+
 == License
 
 MIT — see link:LICENSE[].
+
+link:#readme-top[back to top]
 
 == Contact
 
@@ -144,3 +143,5 @@ Antora Supplemental — support@antora-supplemental.org
 
 * Project: https://github.com/antora-supplemental/antora-unversioned-component-urls
 * Site: https://antora-supplemental.org
+
+link:#readme-top[back to top]
