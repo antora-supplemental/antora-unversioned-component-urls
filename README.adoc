@@ -4,7 +4,53 @@ ifndef::env-github[:icons: font]
 :sectanchors:
 endif::[]
 
-[[readme-top]]
+ifdef::env-github[]
+++++
+<a id="readme-top"></a>
+<div align="center">
+<a href="https://github.com/antora-supplemental/antora-unversioned-component-urls/graphs/contributors"><img src="https://img.shields.io/github/contributors/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge" alt="Contributors"></a>
+<a href="https://github.com/antora-supplemental/antora-unversioned-component-urls/network/members"><img src="https://img.shields.io/github/forks/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge" alt="Forks"></a>
+<a href="https://github.com/antora-supplemental/antora-unversioned-component-urls/stargazers"><img src="https://img.shields.io/github/stars/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge" alt="Stars"></a>
+<a href="https://github.com/antora-supplemental/antora-unversioned-component-urls/issues"><img src="https://img.shields.io/github/issues/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge" alt="Issues"></a>
+<a href="https://github.com/antora-supplemental/antora-unversioned-component-urls/blob/main/LICENSE"><img src="https://img.shields.io/github/license/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge" alt="License"></a>
+<br />
+<h3 align="center">unversioned-component-urls</h3>
+<p align="center">
+Antora extension: bare `/component/` URL as version selector (default) or alias to latest.
+<br /><br />
+<a href="https://github.com/antora-supplemental/antora-unversioned-component-urls/issues">Report Bug</a>
+&middot;
+<a href="https://github.com/antora-supplemental/antora-unversioned-component-urls/issues">Request Feature</a>
+</p>
+</div>
+++++
+endif::[]
+
+ifndef::env-github[]
+
+ifdef::env-github[]
+++++
+<a id="readme-top"></a>
+<div align="center">
+<a href="https://github.com/antora-supplemental/antora-unversioned-component-urls/graphs/contributors"><img src="https://img.shields.io/github/contributors/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge" alt="Contributors"></a>
+<a href="https://github.com/antora-supplemental/antora-unversioned-component-urls/network/members"><img src="https://img.shields.io/github/forks/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge" alt="Forks"></a>
+<a href="https://github.com/antora-supplemental/antora-unversioned-component-urls/stargazers"><img src="https://img.shields.io/github/stars/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge" alt="Stars"></a>
+<a href="https://github.com/antora-supplemental/antora-unversioned-component-urls/issues"><img src="https://img.shields.io/github/issues/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge" alt="Issues"></a>
+<a href="https://github.com/antora-supplemental/antora-unversioned-component-urls/blob/main/LICENSE"><img src="https://img.shields.io/github/license/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge" alt="License"></a>
+<br />
+<h3 align="center">unversioned-component-urls</h3>
+<p align="center">
+Antora extension: bare `/component/` URL as version selector (default) or alias to latest.
+<br /><br />
+<a href="https://github.com/antora-supplemental/antora-unversioned-component-urls/issues">Report Bug</a>
+&middot;
+<a href="https://github.com/antora-supplemental/antora-unversioned-component-urls/issues">Request Feature</a>
+</p>
+</div>
+++++
+endif::[]
+
+ifndef::env-github[]
 image:https://img.shields.io/github/contributors/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge[Contributors,link=https://github.com/antora-supplemental/antora-unversioned-component-urls/graphs/contributors]
 image:https://img.shields.io/github/forks/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge[Forks,link=https://github.com/antora-supplemental/antora-unversioned-component-urls/network/members]
 image:https://img.shields.io/github/stars/antora-supplemental/antora-unversioned-component-urls.svg?style=for-the-badge[Stars,link=https://github.com/antora-supplemental/antora-unversioned-component-urls/stargazers]
@@ -17,6 +63,7 @@ Antora extension: bare `/component/` URL as version selector (default) or alias 
 
 link:https://github.com/antora-supplemental/antora-unversioned-component-urls/issues[Report Bug] ·
 link:https://github.com/antora-supplemental/antora-unversioned-component-urls/issues[Request Feature]
+endif::[]
 
 == About The Project
 
@@ -29,8 +76,9 @@ Upstream discussion:: https://gitlab.com/antora/antora/-/issues/291
 
 Related Antora use case (alias mode):: https://docs.antora.org/antora/latest/extend/extension-use-cases/#redirect-from-component-to-latest-version
 
-link:#readme-top[back to top]
-
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
 == Installation
 
 === From GitHub (current)
@@ -67,8 +115,9 @@ Former names (GitHub redirects the old repo URL):: `antora-alias-component-to-la
 
 npm publish is optional later; GitHub install is enough for public use.
 
-link:#readme-top[back to top]
-
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
 == Usage
 
 === Playbook
@@ -129,14 +178,16 @@ Components that already have an empty / `version: ~` version are skipped in ever
 
 GitHub topic:: `antora-extension` (for https://antora-extensions.org[antora-extensions.org] topic discovery)
 
-link:#readme-top[back to top]
-
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
 == License
 
 MIT — see link:LICENSE[].
 
-link:#readme-top[back to top]
-
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
 == Contact
 
 Antora Supplemental — support@antora-supplemental.org
@@ -144,4 +195,6 @@ Antora Supplemental — support@antora-supplemental.org
 * Project: https://github.com/antora-supplemental/antora-unversioned-component-urls
 * Site: https://antora-supplemental.org
 
-link:#readme-top[back to top]
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
