@@ -100,6 +100,18 @@ describe('applyToComponents', () => {
     assert.equal(catalog.files[0].src.family, 'alias')
   })
 
+  it('selector mode keeps a chooser when shortCircuitSingle is false', () => {
+    const only = {
+      version: '0.1',
+      startPage: { src: { component: 'docs', version: '0.1', module: 'ROOT', relative: 'index.adoc' } },
+    }
+    const catalog = mockCatalog([{ name: 'docs', title: 'Docs', latest: only, versions: [only] }])
+    applyToComponents(catalog, { mode: 'selector', shortCircuitSingle: false })
+    assert.equal(catalog.files.length, 1)
+    assert.equal(catalog.files[0].src.family, 'page')
+    assert.match(catalog.files[0].contents.toString(), /Choose a version/)
+  })
+
   it('alias mode always adds an alias', () => {
     const latest = {
       version: '1.0',

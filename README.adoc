@@ -167,6 +167,7 @@ Components that already have an empty / `version: ~` version are skipped in ever
 * Versioned URLs such as `/component-name/0.2.0/` keep working.
 * Selector pages are real versionless ROOT `index.adoc` pages (not redirects), so relative links and UI chrome behave normally.
 * With `short_circuit_single: true` (default), a component that has exactly one numbered version uses an alias instead of a one-item chooser.
+* Antora camelCases playbook keys before they reach the extension (`short_circuit_single` → `shortCircuitSingle`). **2.1.1+** reads both shapes; older releases ignored the snake_case flag and always short-circuited.
 * Page-level unversioned URLs (e.g. `/component-name/attributes.html` as a per-page chooser) are not implemented yet — component root only for now.
 
 === Requirements

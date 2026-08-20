@@ -1,6 +1,6 @@
 {
   "name": "@antora-supplemental/unversioned-component-urls",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Antora extension: choose how bare /component/ URLs behave — version selector (default) or alias to latest. Candidate for core (urls.unversioned).",
   "main": "lib/index.js",
   "exports": {
