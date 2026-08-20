@@ -63,6 +63,19 @@ describe('applyToComponents', () => {
       files,
       getComponents: () => components,
       resolvePage: () => components[0]?.latest?.startPage || null,
+      registerComponentVersion: (name, version, descriptor = {}) => {
+        const component = components.find((it) => it.name === name)
+        if (!component) return
+        const componentVersion = {
+          version,
+          displayVersion: descriptor.displayVersion || version || 'default',
+          title: descriptor.title || name,
+          prerelease: descriptor.prerelease,
+          asciidoc: descriptor.asciidoc,
+        }
+        component.versions.push(componentVersion)
+        return componentVersion
+      },
       addFile: (file) => {
         files.push(file)
         return file
