@@ -2,6 +2,7 @@
 
 == 2026-08-20
 
+* **2.1.2:** Selector pages set Vinyl `path` and register a prerelease versionless component version so AsciiDoc convert and page compose succeed (fixes `No path specified` / `displayVersion` fatals when `short_circuit_single: false`).
 * **2.1.1:** Read Antora’s camelCased `shortCircuitSingle` config key (playbook `short_circuit_single` was ignored, so single-version components always short-circuited to an alias).
 
 == 2026-08-02
